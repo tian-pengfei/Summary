@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.junit.demo.MyFirstJUnitJupiterTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-02T03:38:07" hostname="LAPTOP-SRNIC83K" time="0.012">
+  <properties/>
+  <testcase name="addition()" classname="com.junit.demo.MyFirstJUnitJupiterTests" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
