@@ -1,12 +1,12 @@
 # 快速入门单元测试-Junit5
 
-## 简介
+## 1. 简介
 
 本文可以让你快速了解Junit5一些特性，迅速掌握Junit5的一些概念。有些地方大家清楚特性就行，当我们使用到的时候，再去通过官网探究功能接口的详细使用尤其是`其他`章节的部分。
 
 
 
-## 测试的结构
+## 2. 测试的结构
 
 
 
@@ -28,7 +28,7 @@
 
 
 
-## Lifecycle Method
+## 3.Lifecycle Method
 
 对测试的环境的准备必不可少，Junit提供了四个注解修饰方法，让我们使用来对我们测试进行准备。 
 
@@ -117,7 +117,7 @@ tear down all test...
 
 
 
-##  <a id="testInstance">测试时的实例</a>
+##  4.<a id="testInstance">测试时的实例</a>
 
 有没有想过， `@BeforeAll`和`AftereAll`修饰的方法为什么是静态的？
 
@@ -192,13 +192,13 @@ public class TestInstanceDemo {
 
 ![image-20221102222006961](image/image-20221102222006961.png)
 
-## Test Method
+## 5.Test Method
 
 测试方法，用于测试某个接口，直接可以运行的方法。
 
 最简单最常用的是‘
 
-### Test
+### 5.1Test
 
 @Test修饰的方法为测试方法
 
@@ -213,7 +213,7 @@ public class TestInstanceDemo {
 
 
 
-### Repeated Test
+### 5.2 Repeated Test
 
 @RepeatedTest修饰的方法为测试方法。
 
@@ -247,7 +247,7 @@ public class RepeatedTestsSimpleDemo {
 
 
 
-### Parameterized Test
+### 5.3 Parameterized Test
 
 @ParameterizedTest修饰的方法为测试方法。
 
@@ -285,7 +285,7 @@ public class ParameterizedTestDemo {
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests)
 
-### Dynamic Test
+### 5.4 Dynamic Test
 
 我们的上面测试，在编译完成之后就是已经是固定的了。现在我们需要在运行时候，生成我们的测试。
 
@@ -308,13 +308,13 @@ public class ParameterizedTestDemo {
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-dynamic-tests)
 
-### TestTemplate
+### 5.5 TestTemplate
 
 不常用，略
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-templates)
 
-## Nested Tests
+## 6. Nested Tests
 
 为了更好描述测试之间的关系，比如有时候我们的测试的条件状态递进的，可以想象成一个状态树，每一个节点都有自己的测试状态。这样我们可以利用`@Nested`注解和java的`NestClass`,来更好描述描述测试层次结构。
 
@@ -419,13 +419,13 @@ class TestingAStackDemo {
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested)
 
-## 断言
+## 7. 断言
 
 
 
 断言之前我们描述过，就是判断我们的测试的执行结果是否正确
 
-### 基本使用
+### 7.1 基本使用
 
 Junit5本身提供了断言，来让我们进行判断测试结果是否正确。
 
@@ -493,7 +493,7 @@ void exceptionTesting() {
 }
 ```
 
-### 三方库的断言
+### 7.2 三方库的断言
 
 Junit的断言，有时候会让我们混淆哪里是期望值，那里是实际结果，比如`assertEquals(2, calculator.add(1, 1));`我们就比较容易混淆哪里放期望值哪里放实际结果值。
 
@@ -512,7 +512,7 @@ Junit的断言，有时候会让我们混淆哪里是期望值，那里是实际
 
 
 
-### Void方法怎么测试
+### 7.3Void方法怎么测试
 
 Void方法测试，我们可以使用`Mockito`框架，这是一个模拟依赖对象的框架，比如A模型依赖B模型,对A进行测试的时候，我们由于某些原因难以构建B模型，我们可以使用Mockito进行模拟一个B模型，来对A功能接口进行测试。
 
@@ -538,11 +538,11 @@ void testAddItem(){
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
 
-## 其他
+## 8. 其他
 
 
 
-### 更好的描述
+### 8.1 更好的描述
 
 junit5 给我提供一个注解，来让我们更好的描述我们的测试类的测试方法，默认使用的是测试方法名称或者测试类的名称
 
@@ -593,7 +593,7 @@ class DisplayNameDemo {
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names)
 
-### 组合注解（Composed Annotations）
+### 8.2 组合注解（Composed Annotations）
 
 Junit提供的注解都是元注解（`Meta-Annotations`），我们可以使用这些元注解组合自己的注解形成组合注解。组合注解的语义继承这些元注解。
 
@@ -639,7 +639,7 @@ void myFastTest() {
 
 
 
-### 不测试、某种条件下测试
+### 8.3不测试、某种条件下测试
 
 **不测试，**
 
@@ -713,7 +713,7 @@ void notOnWindows() {
 
 
 
-### 测试的执行顺序
+### 8.4 测试的执行顺序
 
 测试之间是相互独立的，所以测试的顺序不影响结果，但是测试顺序有时候也相当重要，尤其是集成测试的时候，比如对性能的影响等。Junit支持测试顺序的设置。相关注解`@Order` `@TestClassOrder`
 
@@ -721,13 +721,13 @@ void notOnWindows() {
 
 
 
-### 设置超时时间
+### 8.5 设置超时时间
 
 **@Timeout(**5**) ** 可以添加到`Lifecle Method` 和`Test Method`上，执行的过程中，超时就报异常
 
 [更多](https://junit.org/junit5/docs/current/user-guide/#writing-tests-declarative-timeouts)
 
-### 扩展（Extension）
+### 8.6 扩展（Extension）
 
 如果Junit提供的接口，大部分都是注解，不能很好进行测试。我们可以自己通过扩展来实现自己想要的功能,例如Spring提供的`SpringExtension`,
 
@@ -739,7 +739,7 @@ void notOnWindows() {
 
 
 
-### 测试中使用接口和默认方法
+### 8.7 测试中使用接口和默认方法
 
 `@Test`, `@RepeatedTest`, `@ParameterizedTest`, `@TestFactory`, `@TestTemplate`, `@BeforeEach`, and `@AfterEach`都可以修饰inteface中的default方法。
 
@@ -799,7 +799,7 @@ public class TestLifecycleLoggerImplDemo implements TestLifecycleLogger{
 
 
 
-## 总结
+## 9. 总结
 
 
 
@@ -829,7 +829,7 @@ public class TestLifecycleLoggerImplDemo implements TestLifecycleLogger{
 
 
 
-## 参考
+## 10. 参考
 
 [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
 
