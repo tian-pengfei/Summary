@@ -28,7 +28,7 @@
 
 
 
-## 3.Lifecycle Method
+## 3. Lifecycle Method
 
 对测试的环境的准备必不可少，Junit提供了四个注解修饰方法，让我们使用来对我们测试进行准备。 
 
@@ -117,7 +117,7 @@ tear down all test...
 
 
 
-##  4.<a id="testInstance">测试时的实例</a>
+##  4. <a id="testInstance">测试时的实例</a>
 
 有没有想过， `@BeforeAll`和`AftereAll`修饰的方法为什么是静态的？
 
@@ -192,13 +192,13 @@ public class TestInstanceDemo {
 
 ![image-20221102222006961](image/image-20221102222006961.png)
 
-## 5.Test Method
+## 5. Test Method
 
 测试方法，用于测试某个接口，直接可以运行的方法。
 
 最简单最常用的是‘
 
-### 5.1Test
+### 5.1 Test
 
 @Test修饰的方法为测试方法
 
@@ -512,7 +512,7 @@ Junit的断言，有时候会让我们混淆哪里是期望值，那里是实际
 
 
 
-### 7.3Void方法怎么测试
+### 7.3 Void方法怎么测试
 
 Void方法测试，我们可以使用`Mockito`框架，这是一个模拟依赖对象的框架，比如A模型依赖B模型,对A进行测试的时候，我们由于某些原因难以构建B模型，我们可以使用Mockito进行模拟一个B模型，来对A功能接口进行测试。
 
