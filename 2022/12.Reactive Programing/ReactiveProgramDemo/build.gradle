@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.google.guava:guava:31.1-jre"
+    implementation 'com.ea.async:ea-async:1.2.3'
+    implementation platform('io.projectreactor:reactor-bom:2020.0.24')
+    implementation 'io.projectreactor:reactor-core'
+}
+
+test {
+    useJUnitPlatform()
+}
